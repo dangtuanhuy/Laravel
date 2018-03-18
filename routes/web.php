@@ -62,3 +62,5 @@ Route::group(['prefix'=>'MyGroup'],function()
             return'Hachike';
             });
 });
+//Goi Controller
+Route::get('GoiController','myController@XinChao');
