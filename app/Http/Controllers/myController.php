@@ -10,4 +10,11 @@ class myController extends Controller
     {
 echo 'XinChaocacban';
     }
+    //
+    public function Nghiencuu($ten)
+    {
+echo "Nghiencuu:".$ten;
+return redirect()->route('myRoute');
+//Tên của route khác là myRoute
+    }
 }
