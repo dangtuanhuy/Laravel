@@ -65,3 +65,42 @@ Route::group(['prefix'=>'MyGroup'],function()
 //Goi Controller
 Route::get('GoiController','myController@XinChao');
 Route::get('Thamso/{ten}','myController@Nghiencuu');
+//Làm việc với URL
+Route::get('MyRequest','myController@getURL');
+//Form
+Route::get('getForm',function()
+{
+return view('postForm');
+});
+Route::post('postForm',
+[
+'as'=>'postForm',
+'uses'=>'myController@postForm',
+]);
+//Cookie
+Route::get('setCookie','myController@setCookie');
+
+Route::get('getCookie','myController@getCookie');
+
+Route::get('uploadFile',function()
+{
+    return view('postFile');
+});
+
+Route::post('postFile',['as'=>'postFile','uses'=>'myController@postFile']);
+//Json
+Route::get('getJson','myController@getJson');
+//Truyền tham số cho view
+Route::get('myView/{ten}',function($ten)
+{
+return view('myView',['ten'=>$ten]);
+});
+Route::get('Time/{t}','myController@Time');
+View::share('KhoaHoc','ASP.NET MVC');
+//Blade Template
+Route::get('blade',function()
+{
+return view('pages.php');
+});
+//Truyền sang Themes
+Route::get('BladeTemplate/{str}','myController@blade');
