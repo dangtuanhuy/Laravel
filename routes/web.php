@@ -67,3 +67,24 @@ Route::get('GoiController','myController@XinChao');
 Route::get('Thamso/{ten}','myController@Nghiencuu');
 //Làm việc với URL
 Route::get('MyRequest','myController@getURL');
+//Form
+Route::get('getForm',function()
+{
+return view('postForm');
+});
+Route::post('postForm',
+[
+'as'=>'postForm',
+'uses'=>'myController@postForm',
+]);
+//Cookie
+Route::get('setCookie','myController@setCookie');
+
+Route::get('getCookie','myController@getCookie');
+
+Route::post('postFile',['as'=>'postFile','uses'=>'myController@postFile']);
+
+Route::get('uploadFile',function()
+{
+    return view('postFile');
+});
