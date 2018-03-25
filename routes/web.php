@@ -95,4 +95,12 @@ Route::get('myView/{ten}',function($ten)
 {
 return view('myView',['ten'=>$ten]);
 });
-
+Route::get('Time/{t}','myController@Time');
+View::share('KhoaHoc','ASP.NET MVC');
+//Blade Template
+Route::get('blade',function()
+{
+return view('pages.php');
+});
+//Truyền sang Themes
+Route::get('BladeTemplate/{str}','myController@blade');

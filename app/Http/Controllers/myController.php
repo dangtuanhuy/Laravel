@@ -80,4 +80,22 @@ return redirect()->route('myRoute');
             $array);
 
     }
+    public function Time($t)
+    {
+        return view('myView',['t'=>$t]);
+    }
+    public function blade($str)
+    
+    {
+        $khoahoc = "<b>ASP.NET MVC";
+        if($str=="laravel")
+        {
+            return view('pages.laravel',['khoahoc'=>$khoahoc]);
+        }
+        elseif($str=="php")
+        {
+            return view('pages.php',['khoahoc'=>$khoahoc]);
+        }
+        return 0;
+    }
 }
