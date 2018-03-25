@@ -82,9 +82,17 @@ Route::get('setCookie','myController@setCookie');
 
 Route::get('getCookie','myController@getCookie');
 
-Route::post('postFile',['as'=>'postFile','uses'=>'myController@postFile']);
-
 Route::get('uploadFile',function()
 {
     return view('postFile');
 });
+
+Route::post('postFile',['as'=>'postFile','uses'=>'myController@postFile']);
+//Json
+Route::get('getJson','myController@getJson');
+//Truyền tham số cho view
+Route::get('myView/{ten}',function($ten)
+{
+return view('myView',['ten'=>$ten]);
+});
+

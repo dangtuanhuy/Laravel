@@ -64,12 +64,20 @@ return redirect()->route('myRoute');
     {
         if($request->hasFile('myFile'))
         {
-            echo "Đã có File";
+           $file = $request ->file('myFile');
+           $file->move('img','Huy.jpg');
         }
         else
         {
 
             echo "chưa có File";
         }
+    }
+    public function getJson()
+    {
+        $array = ['Khoa Hoc'=>'Laravel'];
+        return response()->json(
+            $array);
+
     }
 }
