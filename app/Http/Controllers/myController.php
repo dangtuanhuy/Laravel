@@ -87,7 +87,7 @@ return redirect()->route('myRoute');
     public function blade($str)
     
     {
-        $khoahoc = "<b>ASP.NET MVC";
+        $khoahoc = "";
         if($str=="laravel")
         {
             return view('pages.laravel',['khoahoc'=>$khoahoc]);
